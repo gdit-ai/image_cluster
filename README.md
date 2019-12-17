@@ -5,8 +5,8 @@
 运行环境：Ubuntu16.04LTS、Python3  
 所需要的库：CUDA、CUDNN、Numpy、TensorFlow-GPU2.0、Keras、OpenCV、Flask、OS等等依赖库  
 编辑器：Pycharm、HBuilder X  
-前端框架：Vue、Element、axios  
-本文分为三部分：  
+前端框架：Vue、Element、axios    
+本文分为三部分：
 - 第一部分：系统驱动的安装与环境的搭建
 - 第二部分：利用VGG16网络训练模型与预测
 - 第三部分：通过前端与后端的交接，利用页面实现模型预测的可视化
