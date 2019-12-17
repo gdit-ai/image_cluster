@@ -16,7 +16,7 @@ def LoadImage(image_path):
 
     return np.array(img[:, :, :3])
 
-def abs_path(path):
+def predict(path):
     abs_path = os.path.abspath(path)
     model = load_model("./vggmodel_21-0.00-0.98.hdf5")
     label_dict={0:'Animal', 1:'Architecture', 2:'Scenery', 3:'people', 4:'plane'}
@@ -29,9 +29,9 @@ def abs_path(path):
     im = Image.open(abs_path)
     draw = ImageDraw.Draw(im)
     font = ImageFont.truetype('华文圆体 REGULAR.TTF', 30)
-    draw.text((100, 10), "识别结果: {}".format(label_dict[int(res)]), fill='#FF0000', font=font)
+    draw.text((30, 10), "识别结果: {}".format(label_dict[int(res)]), fill='#FF0000', font=font)
     im.show()
     print('预测完毕！结果为：', label_dict[int(res)])
 
 if __name__ == "__main__":
-    abs_path('Animal.jpg')
+    predict('Animal.jpg')
