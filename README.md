@@ -4,11 +4,11 @@
 图像识别是指计算机对图像进行处理、分析，以识别其中所含目标的类别及其位置(即目标检测和分类)的技术。
 其中图像分类是图像识别的一个类，是给定一幅测试图像，利用训练好的分类器判定它所属的类别。
 
-运行环境：Ubuntu16.04LTS、Python3
-所需要的库：CUDA、CUDNN、Numpy、TensorFlow-GPU2.0、Keras、OpenCV、Flask、OS等等依赖库
-编辑器：Pycharm、HBuilder X
-前端框架：Vue、Element、axios
-本文分为三部分：
+运行环境：Ubuntu16.04LTS、Python3  
+所需要的库：CUDA、CUDNN、Numpy、TensorFlow-GPU2.0、Keras、OpenCV、Flask、OS等等依赖库  
+编辑器：Pycharm、HBuilder X  
+前端框架：Vue、Element、axios  
+本文分为三部分：  
 - 第一部分：系统驱动的安装与环境的搭建
 - 第二部分：利用VGG16网络训练模型与预测
 - 第三部分：通过前端与后端的交接，利用页面实现模型预测的可视化
