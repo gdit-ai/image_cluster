@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue上传demo</title>
+		<link rel="stylesheet" href="./static/lib/element.css">
+		<script type="text/javascript" src="./static/lib/vue.min.js"></script>
+		<script type="text/javascript" src="./static/lib/element.js"></script>
+		<script type="text/javascript" src="./static/lib/axios.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<input type="file" style="display: none;" ref="input" @change="fileChange" multiple= "multiple"></input>
+			<el-button type="primary" round @click="handleClick" v-if="upload_awesome">上传图片</el-button>
+			<div v-for="(file,index) in imageData">
+				<el-tag type="success" style="margin:5px 5px;display: flex;justify-content:center;">识别结果为:{{index}}</el-tag>
+				<el-row>
+					<el-col :span="6" v-for="img in file">
+						<div class="img-box" style="width: 100%;">
+							<img :src="img.path" alt="图片正在加载...">
+
+						</div>
+					</el-col>
+				</el-row>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app', // 创建Vue实例
+			data: { //定义数据对象
+				upload_awesome: true,
+				imageData: {},
+				file: '',
+				retData: '',
+                index:'识别中'
+			},
+			methods: { //事件处理器，this将自动绑定到Vue实例上面
+
+				handleClick() {
+					this.$refs['input'].click();
+				},
+				fileChange(e) {
+					this.file = e.target.files[0];
+					this.uploads()
+				},
+				uploads() {
+					let self = this;
+					let param = new FormData();
+					param.append('file', this.file);
+					axios.post('/upload/', param, {}).then(function(response) {
+							if (response.status === 200) {
+								let data = response.data;
+								self.$set(self.$data, 'imageData', data)
+								self.$set(self.$data, 'upload_awesome', false)
+							}
+						})
+						.catch(function(error) {
+							console.log("上传图片失败!")
+						})
+				},
+			}
+		})
+	</script>
+
+	<style type="text/css">
+		.img-box img {
+			width: 320px;
+			height: 240px;
+			margin: 5px 5px;
+			border: #00E676 2px solid;
+		}
+	</style>
+
+</html>
