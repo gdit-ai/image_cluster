@@ -35,26 +35,3 @@
 
 附项目中所用到的数据集及模型：[百度网盘](https://pan.baidu.com/s/1kFfU5y_IZGhLvspIJzkaeQ)
 
-### 1. 安装显卡驱动(这里以2080 super显卡为例)
- 
-
- 1. 删除原有驱动  (这里假设有安装驱动）
-	
-   打开终端（按住Ctrl + Alt + T）
-
-	
-a)  禁用nouveau  (安装NVIDIA需要把系统自带的驱动禁用)
-	打开文件:  `sudo vim /etc/modprobe.d/blacklist.conf`
-文本末尾追加：
-
-	blacklist nouveau
-	options nouveau modeset=0
-
-然后保存退出(:wq)，打开终端:`lsudo update-initramfs  -u`
-重启Ubuntu系统:`reboot`
-
-
-b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
-打开终端输入：`lsmod | grep nouveau`
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191218114819650.jpg)
