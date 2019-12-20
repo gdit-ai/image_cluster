@@ -34,4 +34,4 @@
 项目结构、前端页面、服务器端、页面展示
 
 附项目中所用到的数据集及模型：[百度网盘](https://pan.baidu.com/s/1kFfU5y_IZGhLvspIJzkaeQ)
-![](https://img-blog.csdnimg.cn/20191218114819650.jpg)
+![](https://img-blog.csdnimg.cn/20191220180335512.png)
