@@ -157,13 +157,13 @@ sudo sh cuda_10.1.243_418.87.00_linux.run
 ![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218140930666.png)
 ### 数据增强
 清洗处理以后，我们五个类的图片集数量分别为：  
-类别    | 数量  
--------- | -----  
-Animal  | 500张  
-Architecture  | 500张  
-people  | 700张  
-plane  | 500张  
-Scenery  | 700张  
+|类别    | 数量  |
+|:--------: | :-----: |
+|Animal  | 500张  |
+|Architecture  | 500张  |
+|people  | 700张  |
+|plane  | 500张  |
+|Scenery  | 700张  |
 总体来说，数据集的数量太少，得出的模型可能存在模型泛化能力不强的情况。所以利用数据增强，对图片集进行随即旋转、平移变换、缩放变换、剪切变换、水平翻转等等操作，使得每张数据集得到50张处理后的图片，并保存在原本的文件夹下，整个数据集得到扩大（代码：```data_augmentation.py```）。
 代码示例：
 ```python
