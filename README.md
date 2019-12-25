@@ -58,7 +58,8 @@ a)  禁用nouveau  (安装NVIDIA需要把系统自带的驱动禁用)
 
 
 b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
-打开终端输入：`lsmod | grep nouveau`![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218114819650.jpg)
+打开终端输入：`lsmod | grep nouveau`
+![](https://github.com/gdit-ai/image_cluster/image/blob/master/20191218114819650.jpg)
 
 如果有显示驱动，则回去重复前面的步骤，重新禁用显卡
 
