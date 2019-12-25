@@ -37,9 +37,9 @@
 ## 一、深度学习环境搭建
 建议下载好需要用到的显卡驱动、CUDA、CUDNN、Anaconda3等安装包文件，放在用户的目录下，记住该目录路径。本文的显卡是RTX 2080 super、CUDNN7+CUDA10.1
 
-**N卡显卡驱动下载地址：[https://www.nvidia.cn/Download/index.aspx?lang=cn](https://www.nvidia.cn/Download/index.aspx?lang=cn)
-CUDA下载地址：[https://developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
-CUDNN下载地址(需要账号)：[https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn)
+**N卡显卡驱动下载地址：[https://www.nvidia.cn/Download/index.aspx?lang=cn](https://www.nvidia.cn/Download/index.aspx?lang=cn)  
+CUDA下载地址：[https://developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)  
+CUDNN下载地址(需要账号)：[https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn)  
 Anconda3下载地址：[https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)**
 ### 安装显卡驱动(本文以2080 super显卡为例)
 1. **删除原有驱动  (这里假设有安装驱动）**
