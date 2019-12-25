@@ -363,7 +363,7 @@ Axios:  [http://www.axios-js.com/zh-cn/docs/#axios](http://www.axios-js.com/zh-c
 ```axios.post()：```axios中post请求实例方法的别名，创建该请求的基本配置选项如下axios.post(url[, data[, config]])，即请求路径(url)、数据、和配置，只有URL是必需的，详情请访问下面网址
 [http://www.axios-js.com/zh-cn/docs/#axios-options-url-config-1](http://www.axios-js.com/zh-cn/docs/#axios-options-url-config-1)
 then函数则接受该请求的响应信息，结构如下：
-![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218150359742.png)  
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218150359742.png)
 通过if (response.status === 200) {}
 判断响应状态，并更新相应的数据，同时视图会进行重渲染，这是vue的特性。
 在使用catch时，或传递拒绝回调作为then的第二个参数时，响应可以通过error对象可被使用，主要作用是处理错误。
@@ -416,6 +416,6 @@ upload()函数为该项目后端的核心模块（详细解释请前往GitHub[�
 >补充：若项目运行出现这种报错，是因为路径的问题所导致，建议使用Ubuntu系统运行flask程序，或者将用到的路径全部更换为绝对路径
 ### 运行程序
 打开终端输入`python app.py`
-![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191219230603679.png)  
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191219230603679.png)
 此时服务器即为启动状态，打开浏览器，通过127.0.0.1:5000或者ip:5000的方式访问网页，上传图像，进行识别并在前端进行展示
 ![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191219230919650.png)
