@@ -157,7 +157,7 @@ sudo sh cuda_10.1.243_418.87.00_linux.run
 ![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218140930666.png)
 ### 数据增强
 清洗处理以后，我们五个类的图片集数量分别为：  
-|类别    | 数量  | 
+|类别    | 数量  |  
 |:--------: | :-----: |  
 |Animal  | 500张  |  
 |Architecture  | 500张  |  
