@@ -46,21 +46,21 @@ Anconda3下载地址：[https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/](
 	
    打开终端（按住Ctrl + Alt + T）
    
-a)  禁用nouveau  (安装NVIDIA需要把系统自带的驱动禁用)
-	打开文件:  `sudo vim /etc/modprobe.d/blacklist.conf`
+a)  禁用nouveau  (安装NVIDIA需要把系统自带的驱动禁用)  
+	打开文件:  `sudo vim /etc/modprobe.d/blacklist.conf`  
 文本末尾追加：
 
 	blacklist nouveau
 	options nouveau modeset=0
 
-然后保存退出(:wq)，打开终端:`lsudo update-initramfs  -u`
+然后保存退出(:wq)，打开终端:`lsudo update-initramfs  -u`  
 重启Ubuntu系统:`reboot`
 
 
-b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
+b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)  
 打开终端输入：`lsmod | grep nouveau`
-![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218114819650.jpg)
-如果没有任何显示，则表示禁用正常
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218114819650.jpg)  
+如果没有任何显示，则表示禁用正常  
 如果有显示驱动，则回去重复前面的步骤，重新禁用显卡
 
 2. 进入命令行界面,按Ctrl + Alt + F1
@@ -76,8 +76,8 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 3.  挂载显卡:            `modprobe nvidia`
 
 查看显卡信息：          `nvidia-smi`
-![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/2019121821242521.jpg)
-如果显示上图信息，则成功安装显卡驱动，没有则安装失败。
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/2019121821242521.jpg)  
+如果显示上图信息，则成功安装显卡驱动，没有则安装失败。  
 **安装失败的话，不要继续下面的步骤，重复前面卸载显卡和安装显卡的步骤**
 
 4.  开启图形界面:`sudo service lighdm start`
@@ -92,18 +92,18 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 
 安装cuda `sudo sh cuda文件名`
 
-安装过程中的选项
-![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218212924953.png)
+安装过程中的选项  
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218212924953.png)  
 2. 测试CUDA
 
 我用的是cuda10.0，所以我的安装路径是：**/usr/local/cuda-10.0**
 
-`cd  /usr/local/cuda-10.0/samples/1_Utilities/deviceQuery`
-`sudo  make`
+`cd  /usr/local/cuda-10.0/samples/1_Utilities/deviceQuery`  
+`sudo  make`  
 `sudo  ./deviceQuery`
 
-3. 出现如下信息，则安装成功
-![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218213416178.png)
+3. 出现如下信息，则安装成功  
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218213416178.png)  
 4. 安装完成后，设置环境变量      
 
 5. 打开终端，输入：  `sudo vim  ~/.bashrc`
@@ -112,9 +112,9 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 
 如我的目录为：usr/local/cuda-10.0/，则输入：
 
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
-	export PATH=$PATH:/usr/local/cuda-10.0/bin
-	export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-10.0
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64  
+	export PATH=$PATH:/usr/local/cuda-10.0/bin  
+	export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-10.0  
 	
 然后保存退出，在终端运行：`source ~/.bashrc`
 
