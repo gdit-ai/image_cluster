@@ -76,7 +76,7 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 3.  挂载显卡:            `modprobe nvidia`
 
 查看显卡信息：          `nvidia-smi`
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/2019121821242521.jpg)
+![xxx](https://github.com/gdit-ai/image_cluster/tree/master/image/2019121821242521.jpg)
 如果显示上图信息，则成功安装显卡驱动，没有则安装失败。
 **安装失败的话，不要继续下面的步骤，重复前面卸载显卡和安装显卡的步骤**
 
