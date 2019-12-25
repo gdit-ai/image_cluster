@@ -59,7 +59,7 @@ a)  禁用nouveau  (安装NVIDIA需要把系统自带的驱动禁用)
 
 b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 打开终端输入：`lsmod | grep nouveau`
-![](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218114819650.jpg)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218114819650.jpg)
 
 如果有显示驱动，则回去重复前面的步骤，重新禁用显卡
 
@@ -76,7 +76,7 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 3.  挂载显卡:            `modprobe nvidia`
 
 查看显卡信息：          `nvidia-smi`
-![xxx](https://github.com/gdit-ai/image_cluster/tree/master/image/2019121821242521.jpg)
+![](https://github.com/gdit-ai/image_cluster/tree/master/image/2019121821242521.jpg)
 如果显示上图信息，则成功安装显卡驱动，没有则安装失败。
 **安装失败的话，不要继续下面的步骤，重复前面卸载显卡和安装显卡的步骤**
 
