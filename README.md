@@ -60,7 +60,7 @@ a)  禁用nouveau  (安装NVIDIA需要把系统自带的驱动禁用)
 b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 打开终端输入：`lsmod | grep nouveau`
 ![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218114819650.jpg)
-
+如果没有任何显示，则表示禁用正常
 如果有显示驱动，则回去重复前面的步骤，重新禁用显卡
 
 2. 进入命令行界面,按Ctrl + Alt + F1
@@ -76,7 +76,7 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 3.  挂载显卡:            `modprobe nvidia`
 
 查看显卡信息：          `nvidia-smi`
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/2019121821242521.jpg)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/2019121821242521.jpg)
 如果显示上图信息，则成功安装显卡驱动，没有则安装失败。
 **安装失败的话，不要继续下面的步骤，重复前面卸载显卡和安装显卡的步骤**
 
@@ -93,7 +93,7 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 安装cuda `sudo sh cuda文件名`
 
 安装过程中的选项
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218212924953.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218212924953.png)
 2. 测试CUDA
 
 我用的是cuda10.0，所以我的安装路径是：**/usr/local/cuda-10.0**
@@ -103,7 +103,7 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 `sudo  ./deviceQuery`
 
 3. 出现如下信息，则安装成功
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218213416178.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218213416178.png)
 4. 安装完成后，设置环境变量      
 
 5. 打开终端，输入：  `sudo vim  ~/.bashrc`
@@ -119,7 +119,7 @@ b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 然后保存退出，在终端运行：`source ~/.bashrc`
 
 6. 检查是否配置成功：新开一个终端，输入`nvcc --version`，如果显示下面的文子就说明安装成功了
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218213657735.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218213657735.png)
 
 **下面是官方给的在线下载，安装CUDA10.1的方法，仅供参考**
 ```bash
@@ -146,15 +146,15 @@ sudo sh cuda_10.1.243_418.87.00_linux.run
 ### 数据集的获取
 本文的数据集中包含五个类，分别是**Animal（动物）、Architecture（建筑）、people（人）、plane（飞机）、Scenery（风景）**。由于身边条件的欠缺，数据集的获取途径主要通过爬取百度图片的方式获取，并将相同类的图片放在同一文件夹（代码：```Reptile_img.py```）。
 爬取一个类示例：
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218140829865.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218140829865.png)
 **注意：保存的图片采用英文格式，不然后续无法利用OpenCV读入。**
 
 ### 数据集的清洗及读取
 由于获取的图片数据集较为杂乱，所以我们需要人为清洗数据，以提高数据集的准确性。而后，数据集中可能会存在无法利用OpenCV读取的图片，我们采取遍历所有文件，并将其读入，将无法读入显示的图片删除，保证数据集的正确性（代码：```open_img.py```）。
 将所有图片读取示例：
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218140913593.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218140913593.png)
 **出现下方错误证明是爬取的图片无法读入，找到相对应的图片删除就好。**
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218140930666.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218140930666.png)
 ### 数据增强
 清洗处理以后，我们五个类的图片集数量分别为：
 类别    | 数量
@@ -227,7 +227,7 @@ def CountFiles(path):
     # 将标签与数值对应输出
     return files, labels, len(subdirs)
 ```
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218141115236.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218141115236.png)
 **将数据集中每张图片的数据与对应的标签绑定，随机打乱后将标签转为One-Hot码。**
 ```python
 files, labels, clazz = CountFiles(r"data")
@@ -240,15 +240,15 @@ labels = keras.utils.to_categorical(labels, clazz) # 将标签转为One-Hot码
 ```
 ### 加载模型并预测展示
 选取五个类中的一个类的图片，加载模型训练中loss较低accuracy较高的模型，将结果可视化在原有图片上，结果完全吻合实际(代码：`Predict.py`)。
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218141225174.png)
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218141317247.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218141225174.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218141317247.png)
 ### 训练准确率折线图绘制
 将模型batch、size参数进行多次修改，得出下图每次训练得到的最好模型准确率与损失率，并绘制相对应的折线统计图，可以发现，当batch=25，size=(64, 64)时，得到的训练准确率最高，损失率也较低，所以最终我们采用batch=25，size=64*64的模型。
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218141344124.png)
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218141356764.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218141344124.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218141356764.png)
 ## 三、模型预测的页面可视化
 ### 项目结构
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218145155405.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218145155405.png)
 ```|——static```	　　　#静态资源目录，此处为存放前端上传的图片
 ```	|——lib```		　　　　#css、js文件存放目录
 ```	|——upload	```　　　#图片上传后的保存目录
@@ -363,7 +363,7 @@ Axios:  [http://www.axios-js.com/zh-cn/docs/#axios](http://www.axios-js.com/zh-c
 ```axios.post()：```axios中post请求实例方法的别名，创建该请求的基本配置选项如下axios.post(url[, data[, config]])，即请求路径(url)、数据、和配置，只有URL是必需的，详情请访问下面网址
 [http://www.axios-js.com/zh-cn/docs/#axios-options-url-config-1](http://www.axios-js.com/zh-cn/docs/#axios-options-url-config-1)
 then函数则接受该请求的响应信息，结构如下：
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218150359742.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218150359742.png)
 通过if (response.status === 200) {}
 判断响应状态，并更新相应的数据，同时视图会进行重渲染，这是vue的特性。
 在使用catch时，或传递拒绝回调作为then的第二个参数时，响应可以通过error对象可被使用，主要作用是处理错误。
@@ -412,10 +412,10 @@ def upload():
 >    -  调用模型预测的文件
 
 upload()函数为该项目后端的核心模块（详细解释请前往GitHub[下载](https://github.com/gdit-ai/image_cluster)查看源代码）后端整体逻辑为：
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218201701550.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191218201701550.png)
 >补充：若项目运行出现这种报错，是因为路径的问题所导致，建议使用Ubuntu系统运行flask程序，或者将用到的路径全部更换为绝对路径
 ### 运行程序
 打开终端输入`python app.py`
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191219230603679.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191219230603679.png)
 此时服务器即为启动状态，打开浏览器，通过127.0.0.1:5000或者ip:5000的方式访问网页，上传图像，进行识别并在前端进行展示
-![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191219230919650.png)
+![加载中](https://github.com/gdit-ai/image_cluster/blob/master/image/20191219230919650.png)
