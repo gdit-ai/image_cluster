@@ -9,9 +9,6 @@
 
 指导老师：胡建华，余君
 
-![](https://img-blog.csdnimg.cn/20191218114819650.jpg)
-
-
 随着人工智能热潮的发展，图像识别已经成为了其中非常重要的一部分  
 图像识别是指计算机对图像进行处理、分析，以识别其中所含目标的类别及其位置(即目标检测和分类)的技术  
 其中图像分类是图像识别的一个类，是给定一幅测试图像，利用训练好的分类器判定它所属的类别
@@ -62,10 +59,6 @@ a)  禁用nouveau  (安装NVIDIA需要把系统自带的驱动禁用)
 
 b)  验证nouveau是否已禁用(不禁用nouveau安装显卡会报错)
 打开终端输入：`lsmod | grep nouveau`![](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218114819650.jpg)
-
-
-如果没有任何显示，则表示禁用正常
-![Image text](https://github.com/gdit-ai/image_cluster/tree/master/image/20191218114819650.jpg)
 
 如果有显示驱动，则回去重复前面的步骤，重新禁用显卡
 
